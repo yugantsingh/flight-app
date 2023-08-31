@@ -1,0 +1,72 @@
+<div>
+    <%= form_for @aeroplane do |f| %>
+    <% if @aeroplane.errors.any? %>
+        <div id="error_explanation">
+        <% @aeroplane.errors.full_messages.each do |message| %>
+            <div class="alert alert-danger">
+            <%= message %>
+            </div>
+        <% end %>
+        </div>
+    <% end %>
+    <div class="field">
+        <div class="col-4">
+        <%= f.label :plane, "Plane name:" %>
+        <%= f.text_field :plane, required: true, class: 'form-control' %>
+        </div>
+    </div>
+    <br>
+    <div class="field">
+        <div class="col-4">
+        <%= f.label :model, "Model Number" %>
+        <%= f.text_field :model, required: true, class: 'form-control' %>
+        </div>
+    </div>
+    <br>
+    <div class="field">
+        <div class="col-4">
+        <%= f.label :first_class_columns, "Number of Columns for First class" %>
+        <%= f.number_field :first_class_columns, required: true, class: 'form-control' %>
+        </div>
+    </div>
+    <br>
+    <div class="field">
+        <div class="col-4">
+        <%= f.label :first_class_rows, "Number of Rows for First class" %>
+        <%= f.number_field :first_class_rows, required: true, class: 'form-control' %>
+        </div>
+    </div>
+    <br>
+    <div class="field">
+        <div class="col-4">
+        <%= f.label :business_class_columns, "Number of Columns for Business class" %>
+        <%= f.number_field :business_class_columns, required: true, class: 'form-control' %>
+        </div>
+    </div>
+    <br>
+    <div class="field">
+        <div class="col-4">
+        <%= f.label :business_class_rows, "Number of Rows for Business class" %>
+        <%= f.number_field :business_class_rows, required: true, class: 'form-control' %>
+        </div>
+    </div>
+    <br>
+    <div class="field">
+        <div class="col-4">
+        <%= f.label :economy_class_columns, "Number of Columns for Economy class" %>
+        <%= f.number_field :economy_class_columns, required: true, class: 'form-control' %>
+        </div>
+    </div>
+    <br>
+    <div class="field">
+        <div class="col-4">
+        <%= f.label :economy_class_rows, "Number of Rows for Economy class" %>
+        <%= f.number_field :economy_class_rows, required: true, class: 'form-control' %>
+        </div>
+    </div>
+    <br>
+    <div class="actions">
+        <%= f.submit  class: 'btn btn-primary' %>
+    </div>
+    <% end %>
+</div>

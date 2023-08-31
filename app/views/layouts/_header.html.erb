@@ -1,0 +1,20 @@
+<div>
+    <h1>Flight Booking Application</h1>
+    <hr>
+    <div class="row">
+
+    <% if user_signed_in %>
+      <p class="col-4">
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      </p>
+      <% if current_user.admin? %>
+      <p class="col-4">
+        Welcome Admin <%= current_user.email %> <!-- Only display if user is signed in -->
+      </p>
+      <% else %>
+      <p class="col-4">
+        Welcome <%= current_user.email %> <!-- Only display if user is signed in -->
+      </p>
+      <% end %>
+    <% end %>
+</div>

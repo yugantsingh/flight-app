@@ -1,0 +1,61 @@
+<div>
+<%= form_for @flight do |f| %>
+  <% if @flight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
+      <ul>
+        <% @flight.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :aeroplane_id, "Aeroplane" %>
+    <%= f.collection_select :aeroplane_id, Aeroplane.all, :id, :plane, {}, class: 'form-control' %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :origin %>
+    <%= f.text_field :origin, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :destination %>
+    <%= f.text_field :destination, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :departure %>
+    <%= f.datetime_select :departure, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :arrival %>
+    <%= f.datetime_select :arrival, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fcfare %>
+    <%= f.number_field :fcfare, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bcfare %>
+    <%= f.number_field :bcfare, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ecfare %>
+    <%= f.number_field :ecfare, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+</div>

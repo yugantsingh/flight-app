@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plane: MyString
+  first_class_columns: 1
+  first_class_rows: 1
+  business_class_columns: 1
+  business_class_rows: 1
+  economy_class_columns: 1
+  economy_class_rows: 1
+  model: MyString
+  seats: 1
+
+two:
+  plane: MyString
+  first_class_columns: 1
+  first_class_rows: 1
+  business_class_columns: 1
+  business_class_rows: 1
+  economy_class_columns: 1
+  economy_class_rows: 1
+  model: MyString
+  seats: 1

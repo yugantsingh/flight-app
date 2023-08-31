@@ -1,0 +1,41 @@
+<div>
+<h1>Flight Details</h1>
+
+<table class="table">
+  <tr>
+    <th>Origin:</th>
+    <td><%= @flight.origin %></td>
+  </tr>
+  <tr>
+    <th>Destination:</th>
+    <td><%= @flight.destination %></td>
+  </tr>
+  <tr>
+    <th>Departure:</th>
+    <td><%= @flight.departure.strftime('%Y-%m-%d %H:%M:%S') %></td>
+  </tr>
+  <tr>
+    <th>Arrival:</th>
+    <td><%= @flight.arrival.strftime('%Y-%m-%d %H:%M:%S') %></td>
+  </tr>
+  <tr>
+    <th>FC Fare:</th>
+    <td><%= @flight.fcfare %></td>
+  </tr>
+  <tr>
+    <th>BC Fare:</th>
+    <td><%= @flight.bcfare %></td>
+  </tr>
+  <tr>
+    <th>EC Fare:</th>
+    <td><%= @flight.ecfare %></td>
+  </tr>
+</table>
+
+<% if current_user.admin? %>
+  <%= link_to 'Edit', edit_flight_path(@flight), class: 'btn btn-warning' %>
+<% end %>
+<%= link_to 'Back', flights_path, class: 'btn btn-danger' %>
+<%= link_to 'Book', new_flight_booking_path(flight_id: @flight.id), class: 'btn btn-primary' %>
+
+</div>

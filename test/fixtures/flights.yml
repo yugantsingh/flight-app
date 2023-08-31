@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  origin: MyString
+  destination: MyString
+  departure: 2023-08-31 16:57:34
+  arrival: 2023-08-31 16:57:34
+  fcfare: 1.5
+  bcfare: 1.5
+  ecfare: 1.5
+  aeroplane: one
+
+two:
+  origin: MyString
+  destination: MyString
+  departure: 2023-08-31 16:57:34
+  arrival: 2023-08-31 16:57:34
+  fcfare: 1.5
+  bcfare: 1.5
+  ecfare: 1.5
+  aeroplane: two

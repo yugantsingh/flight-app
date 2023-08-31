@@ -1,0 +1,30 @@
+<div>
+    <h4>Aeroplane Seating Chart</h4>
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+        <th>Class</th>
+        <th>Seat</th>
+        <th>Availability</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% ['First Class', 'Business Class', 'Economy Class'].each do |class_name| %>
+        <tr>
+            <td><strong><%= class_name %></strong></td>
+            <td>
+            <% class_rows = @aeroplane.send("#{class_name.downcase.gsub(' ', '_')}_rows") %>
+            <% class_columns = @aeroplane.send("#{class_name.downcase.gsub(' ', '_')}_columns") %>
+            <% class_rows.times do |row| %>
+                <% class_columns.times do |column| %>
+                <%= "#{('A'.ord + row).chr}#{column + 1}" %>
+                <% end %>
+                <br>
+            <% end %>
+            </td>
+            <td>Availability status here</td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
+</div>

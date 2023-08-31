@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <%# Sign In, Log In and Search Forms %>
+
+    <% if !user_signed_in? %>
+      <p class="col-4">
+        <%= link_to 'Sign up', new_user_registration_path %>
+      </p>
+      <p class="col-4">
+        <%= link_to 'Log in', new_user_session_path %>
+      </p>
+    <% end %>
+  </div>
+</div>
